@@ -3,7 +3,7 @@ import Login from './components/User/Login';
 import Signup from './components/User/Signup';
 import AddMood from './components/moodTracker;
 import AddResource from './components/resource';
-import RelaxationTechnique from './components/relaxationTechnique';
+import RelaxationTechnique from './components/relaxationTechniques';
 
 function App() {
   return (
