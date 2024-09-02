@@ -1,21 +1,26 @@
 import React from 'react';
-import Login from './components/User/Login';
-import Signup from './components/User/Signup';
-import AddMood from './components/moodTracker;
-import AddResource from './components/resource';
-import RelaxationTechnique from './components/relaxationTechniques';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import CourseList from './components/course';
+import MoodTracker from './components/moodTracker';
+import Login from './components/User/login';
+import Signup from '.components//User/signup';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Mental Wellness App</h1>
-      <Login />
-      <Signup />
-      <AddMood />
-      <AddResource />
-      <RelaxationTechnique />
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<course />} />
+          <Route path="/mood-tracker" element={<moodTracker />} />
+          <Route path="/login" element={<User/login />} />
+          <Route path="/register" element={<User/signup />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
 export default App;
+
+
+
