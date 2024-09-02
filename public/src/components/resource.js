@@ -10,7 +10,7 @@ const AddResource = () => {
     e.preventDefault();
     const details = { title, description, link };
     const token = localStorage.getItem('token');
-    axios.post('http://localhost:3000/resource/add-resource', details, { headers: { "Authorization": token } })
+    axios.post('http://localhost:5000/resource/add-resource', details, { headers: { "Authorization": token } })
       .then((res) => {
         console.log('Resource added successfully');
         setTitle('');
