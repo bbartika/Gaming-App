@@ -31,7 +31,7 @@ app.use((req, res) => {
 mongoose.connect("mongodb://localhost:27017/mood-tracker")
   .then(() => {
     console.log('Connected to mongoose')
-    app.listen(3000, () => {
+    app.listen(5000, () => {
       console.log('Server is running on port 3000');
     })
   })
