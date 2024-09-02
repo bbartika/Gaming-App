@@ -30,7 +30,6 @@ app.use((req, res) => {
     res.sendFile(path.join(__dirname, `public/${req.url}` ));
 });
 
-
 mongoose.connect("mongodb://localhost:27017/mood-tracker")
   .then(() => {
     console.log('Connected to mongoose')
