@@ -11,7 +11,7 @@ const MoodTracker = () => {
     const fetchMoods = async () => {
         try {
           const token = localStorage.getItem('token');
-            const res = await axios.get('http://localhost:5000/api/moods',{ headers: { "Authorization": token } });
+            const res = await axios.get('http://localhost:5000/mood/get-mood',{ headers: { "Authorization": token } });
             setMoods(res.data);
         } catch (err) {
             console.error(err);
@@ -28,7 +28,7 @@ const MoodTracker = () => {
         e.preventDefault();
         try {
             const token = localStorage.getItem('token');
-            await axios.post('http://localhost:5000/api/moods', formData,{ headers: { "Authorization": token } });
+            await axios.post('http://localhost:5000/mood/add-mood', formData,{ headers: { "Authorization": token } });
             setFormData({ mood: '', notes: '' });
             fetchMoods();
         } catch (err) {
@@ -39,7 +39,7 @@ const MoodTracker = () => {
     const deleteMood = async (id) => {
         try {
           const token = localStorage.getItem('token');
-            await axios.delete(`http://localhost:5000/api/moods/${id}`,{ headers: { "Authorization": token } });
+            await axios.delete(`http://localhost:5000/mood/delete-mood/${id}`,{ headers: { "Authorization": token } });
             fetchMoods();
         } catch (err) {
             console.error(err);
