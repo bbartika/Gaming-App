@@ -11,7 +11,7 @@ router.get('/get-resource',userAuthentication.authenticate,resourceController.ge
 router.get('/get-resource/:id',userAuthentication.authenticate,resourceController.getSpecificResource)
 
 
-router.delete('/delete-mood/:id',userAuthentication.authenticate,courseController.deleteMood)
+router.delete('/delete-resource/:id',userAuthentication.authenticate,courseController.deleteResource)
 
 
 module.exports=router
