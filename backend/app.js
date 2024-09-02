@@ -10,6 +10,7 @@ require('dotenv').config();
 const userRoute = require('./routes/user');
 const moodRoute = require('./routes/mood');
 const resourceRoute = require('./routes/resource');
+const courseRoute = require('./routes/course');
 
 
 
@@ -22,6 +23,8 @@ app.use(cors());
 app.use('/user', userRoute);
 app.use('/mood', moodRoute);
 app.use('/resource',resourceRoute);
+app.use('/course', courseRoute);
+
 
 app.use((req, res) => {
     res.sendFile(path.join(__dirname, `public/${req.url}` ));
